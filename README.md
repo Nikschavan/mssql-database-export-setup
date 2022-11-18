@@ -55,7 +55,7 @@ Password: Strong.Password.01
 
 From databases select the database name which was selected when restoring the database.
 
-Important tables
+#### Important tables
 
 1. cmsContentXml
 
