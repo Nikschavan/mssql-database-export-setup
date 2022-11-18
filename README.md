@@ -1,3 +1,5 @@
+### Setup MSSQL database export from Umbraco on local
+
 1. Start the database server locally using command
 `docker compose up -d`
 
@@ -43,6 +45,7 @@ Replace the `<log-file>.ldf` with the name of the log file, This is the output i
 Table Plus on Mac is an example client which has been tested in this approach to connect to the database and generate JSON files.
 
 In tableplus for Mac, connect to the database using the following details
+
 ```
 Host: localhost
 Port: 1433
@@ -65,30 +68,4 @@ This table consists of all the redirects in the website. Export this table as JS
 --------------------------
 
 Note - Microsoft documentation for setting up and restoring the database backup is available here.
-https://learn.microsoft.com/en-us/sql/linux/tutorial-restore-backup-in-sql-server-container?view=sql-server-ver16
-
---------------------------
-
-Commands for restoring the databases
-
-# Elle
-docker exec -it sql-server-db /opt/mssql-tools/bin/sqlcmd -S localhost \
-   -U SA -P 'Strong.Password.01' \
-   -Q 'RESTORE FILELISTONLY FROM DISK = "/var/opt/mssql/backup/XWP_Umbraco_Elle.bak"' \
-   | tr -s ' ' | cut -d ' ' -f 1-2
-
-docker exec -it sql-server-db /opt/mssql-tools/bin/sqlcmd \
-   -S localhost -U SA -P 'Strong.Password.01' \
-   -Q 'RESTORE DATABASE Elle FROM DISK = "/var/opt/mssql/backup/XWP_Umbraco_Elle.bak" WITH MOVE "Umbraco_Elle" TO "/var/opt/mssql/data/elle/Umbraco_Elle.mdf", MOVE "Umbraco_Elle_log" TO "/var/opt/mssql/data/elle/Umbraco_Elle_log.ldf"'
-
-
-# HomeBeautiful
-docker exec -it sql-server-db /opt/mssql-tools/bin/sqlcmd -S localhost \
-   -U SA -P 'Strong.Password.01' \
-   -Q 'RESTORE FILELISTONLY FROM DISK = "/var/opt/mssql/backup/XWP2_Umbraco_HomeBeautiful.bak"' \
-   | tr -s ' ' | cut -d ' ' -f 1-2
-
-docker exec -it sql-server-db /opt/mssql-tools/bin/sqlcmd \
-   -S localhost -U SA -P 'Strong.Password.01' \
-   -Q 'RESTORE DATABASE HomeBeautiful FROM DISK = "/var/opt/mssql/backup/XWP2_Umbraco_HomeBeautiful.bak" WITH MOVE "bltn33r2szu4i-db-2019-5-16-13-21_Data" TO "/var/opt/mssql/data/elle/Umbraco_bltn33r2szu4i-db-2019-5-16-13-21.mdf", MOVE "bltn33r2szu4i-db-2019-5-16-13-21_Log" TO "/var/opt/mssql/data/elle/Umbraco_bltn33r2szu4i-db-2019-5-16-13-21.ldf"'
-
+<https://learn.microsoft.com/en-us/sql/linux/tutorial-restore-backup-in-sql-server-container?view=sql-server-ver16>
