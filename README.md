@@ -65,6 +65,15 @@ This databse table consists of all the content in the website in the XML format.
 
 This table consists of all the redirects in the website. Export this table as JSON
 
+3. cmsContentType
+
+This defines the content type of the content in the website
+
+4. cmsContent
+
+This table contains relationship of all the content in cmsContentXML as well as cmsContentType.
+This table can be helpful to only import certain type of content type at a time.
+
 --------------------------
 
 Note - Microsoft documentation for setting up and restoring the database backup is available here.
