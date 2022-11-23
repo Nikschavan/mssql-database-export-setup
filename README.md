@@ -22,7 +22,7 @@ The output will be something like this
 LogicalName PhysicalName
 ---------- ------------
 data-name /var/opt/mssql/data/<data-file.mdf>
-log-name /var/opt/mssql/data/<log-file>.ldf>
+log-name /var/opt/mssql/data/<log-file.ldf>
 ---------- ------------
 ```
 
