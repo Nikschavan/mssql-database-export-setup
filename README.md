@@ -21,8 +21,8 @@ The output will be something like this
 ```
 LogicalName PhysicalName
 ---------- ------------
-data-name /var/opt/mssql/data/data-file.mdf
-log-name /var/opt/mssql/data/log-file.mdf
+data-name /var/opt/mssql/data/<data-file.mdf>
+log-name /var/opt/mssql/data/<log-file.ldf>
 ---------- ------------
 ```
 
@@ -39,7 +39,7 @@ Replace the `<.bak-file-name>` with the name of the database dump file.
 Replace the `<data-name>` with the name of the data name, This is the output in place of <data-name> in the previous command.
 Replace the `<log-name>` with the name of the log name, This is the output in place of <log-name> in the previous command.
 Replace the `<data-file.mdf>` with the name of the data file, This is the output in place of <data-file.mdf> in the previous command.
-Replace the `<log-file>.ldf` with the name of the log file, This is the output in place of <log-file>.ldf in the previous command.
+Replace the `<log-file.ldf>` with the name of the log file, This is the output in place of <log-file.ldf> in the previous command.
 
 5. Use MSSQL database client to connect to the database server and download required database tables as JSON.
 Table Plus on Mac is an example client which has been tested in this approach to connect to the database and generate JSON files.
