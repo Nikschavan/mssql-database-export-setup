@@ -74,6 +74,10 @@ This defines the content type of the content in the website
 This table contains relationship of all the content in cmsContentXML as well as cmsContentType.
 This table can be helpful to only import certain type of content type at a time.
 
+5. cmsPreviewXml
+
+This table has content revisions for the content in Umbraco.
+
 --------------------------
 
 Note - Microsoft documentation for setting up and restoring the database backup is available here.
