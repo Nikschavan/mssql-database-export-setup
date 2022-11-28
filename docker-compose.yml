@@ -7,7 +7,11 @@ services:
     ports:
       - "1433:1433"
     volumes:
-          - './database_dumps:/var/opt/mssql/backup'
+      - db_data:/var/opt/mssql
+      - ./database_dumps:/var/opt/mssql/backup
     environment:
       SA_PASSWORD: "Strong.Password.01"
       ACCEPT_EULA: "Y"
+
+volumes:
+  db_data: {}
